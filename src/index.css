@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - warm, nurturing palette */
+    --background: 40 30% 97%;
+    --foreground: 220 15% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 25%;
+
+    /* Primary - Soft blush pink */
+    --primary: 340 60% 75%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 340 70% 85%;
+    --primary-dark: 340 50% 65%;
+
+    /* Secondary - Mint green */
+    --secondary: 160 50% 70%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 160 60% 80%;
+
+    /* Accent - Soft lavender */
+    --accent: 260 45% 75%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 260 50% 85%;
+
+    /* Sky blue for highlights */
+    --sky: 200 70% 75%;
+    --sky-light: 200 75% 85%;
+
+    /* Muted tones */
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Semantic colors */
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 150 60% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 40 95% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 340 60% 75%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(340 60% 75%), hsl(260 45% 75%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 30% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(200 70% 75%), hsl(160 50% 70%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 24px -2px hsl(340 60% 75% / 0.15);
+    --shadow-medium: 0 8px 32px -4px hsl(340 60% 75% / 0.2);
+    --shadow-float: 0 12px 48px -8px hsl(340 60% 75% / 0.25);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 220 20% 12%;
+    --foreground: 40 30% 95%;
+
+    --card: 220 20% 15%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 220 20% 15%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 340 55% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 340 60% 75%;
+    --primary-dark: 340 45% 55%;
+
+    --secondary: 160 45% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 160 50% 70%;
+
+    --accent: 260 40% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 260 45% 75%;
+
+    --sky: 200 65% 65%;
+    --sky-light: 200 70% 75%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 150 55% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 40 90% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 340 55% 65%;
+
+    --shadow-soft: 0 4px 24px -2px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 32px -4px hsl(0 0% 0% / 0.4);
+    --shadow-float: 0 12px 48px -8px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}

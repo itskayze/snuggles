@@ -1,0 +1,8 @@
+project_id = "wdtkcgejgoozscngvjgu"
+
+[edge_functions]
+enabled = true
+
+[[edge_functions.functions]]
+name = "snugbot-chat"
+verify_jwt = false
